@@ -3,8 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "./ProductCard";
+import useProductData from '../hooks/useProductData';
 
 export const ProductList = memo(() => {
+
+  const {products, loading, error, refetch } = useProductData();
   const settings = {
     lazyLoad: "ondemand",
     accessibility: true,
@@ -50,16 +53,6 @@ export const ProductList = memo(() => {
     ],
   };
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/recommendations.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.productData);
-      })
-      .catch((err) => console.error("Failed to load product data:", err));
-  }, []);
 
   return (
     <div className="mx-auto px-4 py-6">
