@@ -59,7 +59,6 @@ export const ProductList = memo(() => {
       <Slider {...settings}>
         {products.map((product, index) => {
           const [productHeader, productSubHeader = ""] = product.productTitle.split(" - ");
-          console.log(`Product header: ${productHeader}, Product subHeader: ${productSubHeader}`);
           return (
             <div key={index}>
               <ProductCard
