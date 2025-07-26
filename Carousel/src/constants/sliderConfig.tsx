@@ -1,15 +1,5 @@
-import React, { useState, useEffect, memo } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ProductCard from "./ProductCard";
-import useProductData from '../hooks/useProductData';
-
-export const ProductList = memo(() => {
-
-  const {products, loading, error, refetch } = useProductData();
-  const settings = {
-    lazyLoad: "ondemand",
+export const SLIDER_CONFIG = {
+   lazyLoad: "ondemand",
     accessibility: true,
     dots: false,
     speed: 3000,
@@ -53,23 +43,3 @@ export const ProductList = memo(() => {
     ],
   };
 
-
-  return (
-    <div className="mx-auto px-4 py-6">
-      <Slider {...settings}>
-        {products.map((product, index) => {
-          const [productHeader, productSubHeader = ""] = product.productTitle.split(" - ");
-          return (
-            <div key={index}>
-              <ProductCard
-                product={product}
-                productHeader={productHeader}
-                productSubHeader={productSubHeader}
-              />
-            </div>
-          );
-        })}
-      </Slider>
-    </div>
-  );
-});
