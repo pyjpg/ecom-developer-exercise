@@ -17,7 +17,8 @@
     "jest-environment-jsdom": "^30.0.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-slick": "^0.30.3",
+    "react-slick": "^0.25.2",
+    "regenerator-runtime": "^0.14.1",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.1.11"
   },
