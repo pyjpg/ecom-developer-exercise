@@ -1,5 +1,4 @@
 import React from 'react';
-import '../index.css';
 
 const ProductCard = ({ product, productHeader, productSubHeader }) => {
   return (
