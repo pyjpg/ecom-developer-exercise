@@ -25,7 +25,7 @@ const ProductCard = ({ product, productHeader, productSubHeader }) => {
 
         {/* Product subheader with fixed height */}
         <div className="h-[20px] flex items-start justify-center mt-1">
-          <div className="text-sm font-small text-gray-600 uppercase line-clamp-3  mb-2">
+          <div className="text-xs font-small text-gray-600 uppercase line-clamp-3  mb-2">
             {productSubHeader}
           </div>
         </div>

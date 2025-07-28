@@ -1,3 +1,4 @@
+
 export const SLIDER_CONFIG = {
    lazyLoad: "ondemand",
     accessibility: true,

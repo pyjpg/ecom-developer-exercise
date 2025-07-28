@@ -15,6 +15,10 @@ jest.mock('../../../hooks/useProductData', () => ({
     default: jest.fn()
 }));
 
+jest.mock('react-slick', () => {
+  return ({ children }) => <div data-testid="mock-slider">{children}</div>;
+});
+
 jest.mock('../../../utils/parseProductTitle', () => ({
     parseProductTitle: jest.fn()
 }));
